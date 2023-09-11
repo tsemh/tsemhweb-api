@@ -9,10 +9,9 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-    	//em produção permitir apenas meu host enviar requisições
         registry.addMapping("/**")
         		.allowCredentials(true)
-                .allowedOrigins("https://tsemhweb-api-production.up.railway.app/tsemhapi/")
+                .allowedOrigins("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
     }
