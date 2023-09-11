@@ -12,7 +12,7 @@ public class CorsConfig implements WebMvcConfigurer {
     	//em produção permitir apenas meu host enviar requisições
         registry.addMapping("/**")
         		.allowCredentials(true)
-                .allowedOrigins("http://localhost:4200")
+                .allowedOrigins("https://tsemhweb-api-production.up.railway.app/tsemhapi/")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
     }
