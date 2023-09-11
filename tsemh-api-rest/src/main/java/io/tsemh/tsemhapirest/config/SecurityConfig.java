@@ -31,7 +31,7 @@ public class SecurityConfig{
 	                .and().authorizeHttpRequests()
 	                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 	                .requestMatchers(HttpMethod.POST, "/login").permitAll()
-			.requestMatchers(HttpMethod.POST, "/usuario/cadastrar").permitAll()
+			.requestMatchers(HttpMethod.POST, "/**").permitAll()
 	                .requestMatchers(HttpMethod.GET).permitAll()
 	                .anyRequest().authenticated()
 	                .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
