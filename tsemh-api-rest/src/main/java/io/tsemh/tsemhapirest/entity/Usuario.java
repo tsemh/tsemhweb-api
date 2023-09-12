@@ -68,11 +68,11 @@ public class Usuario implements UserDetails{
 		this.descricao = descricao;
 	}
 
-	public long getId() {
+	public Int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Int id) {
         this.id = id;
     }
 
