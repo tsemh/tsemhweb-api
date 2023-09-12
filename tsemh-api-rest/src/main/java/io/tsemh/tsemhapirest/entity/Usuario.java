@@ -21,7 +21,7 @@ public class Usuario implements UserDetails{
     @Column(name="id_usuario")
     @SequenceGenerator(name="usuario", sequenceName="sq_tb_usuario", allocationSize=1)
     @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="usuario")
-    private Int id;
+    private int id;
     
     @Column(name="em_usuario")
     private String email;
@@ -47,7 +47,7 @@ public class Usuario implements UserDetails{
     public Usuario() {    
     }
 
-    public Usuario(Integer id, String email, String senha, String nome, String titulo, String descricao,
+    public Usuario(int id, String email, String senha, String nome, String titulo, String descricao,
     		 		List<Categoria> categorias, List<Registro> registros) {
         this.id = id;
         this.email = email;
@@ -68,11 +68,11 @@ public class Usuario implements UserDetails{
 		this.descricao = descricao;
 	}
 
-	public Int getId() {
+	public int getId() {
         return id;
     }
 
-    public void setId(Int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
