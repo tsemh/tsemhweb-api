@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="tb_arquivos")
+@Table(name="tb_arquivo")
 public class Arquivo {
 	
 	@Id
