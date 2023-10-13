@@ -33,7 +33,6 @@ public class RegistroController {
 		    Categoria categoria = getCategoriaByTituloAndTipo(titulo, registro.getTipo(), idUsuario);
 		    registro.setUsuario(usuario);
 		    registro.setCategoria(categoria);
-		    setRegistroDestaque(registro, categoria);
 		    return registroRepository.save(registro);
 		}
 	
@@ -71,14 +70,6 @@ public class RegistroController {
 			        categoriaRepository.save(categoria);
 			    }
 			    return categoria;
-			}
-	
-			private void setRegistroDestaque(Registro registro, Categoria categoria) {
-			    if (categoria.getTipo().equals(registro.getTipo())) {
-			        registro.setDestaque(true);
-			    } else {
-			        throw new RuntimeException("Tipo de categoria não corresponde ao tipo do registro.");
-			    }
 			}
 		
 		@GetMapping
