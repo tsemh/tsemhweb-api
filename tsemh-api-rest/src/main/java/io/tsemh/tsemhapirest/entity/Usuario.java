@@ -10,6 +10,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
+
 
 @Entity
 @Table(name="tb_usuario")
@@ -36,6 +38,7 @@ public class Usuario implements UserDetails{
     private String titulo;
     
     @Column(name="ds_usuario")
+	@Type(type = "text")
     private String descricao;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario", fetch = FetchType.LAZY)
