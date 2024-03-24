@@ -43,7 +43,7 @@ public class Registro {
 	@Column(name="lk_registro")
 	private String link;
 	
-	@Column(name = "ds_registro")
+	@Column(name = "ds_registro", columnDefinition="TEXT")
 	private String descricao;
 	
     @CreationTimestamp
