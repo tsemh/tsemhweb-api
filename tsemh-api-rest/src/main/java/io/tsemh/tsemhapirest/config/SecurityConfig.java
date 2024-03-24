@@ -30,9 +30,10 @@ public class SecurityConfig{
 	                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 	                .and().authorizeHttpRequests()
 	                .requestMatchers(HttpMethod.OPTIONS).permitAll()
-	                .requestMatchers(HttpMethod.POST).permitAll()
+	                .requestMatchers(HttpMethod.POST, "/login").permitAll()
 	                .requestMatchers(HttpMethod.GET).permitAll()
-			.and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+	                .anyRequest().authenticated()
+	                .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
 	                .build();
 	    }
 
