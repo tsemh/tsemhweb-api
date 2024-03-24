@@ -35,7 +35,7 @@ public class Usuario implements UserDetails{
     @Column(name="tt_usuario")
     private String titulo;
     
-    @Column(name="ds_usuario")
+    @Column(name="ds_usuario", columnDefinition="TEXT")
     private String descricao;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario", fetch = FetchType.LAZY)
