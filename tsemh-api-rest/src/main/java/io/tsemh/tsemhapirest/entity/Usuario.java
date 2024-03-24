@@ -36,7 +36,6 @@ public class Usuario implements UserDetails{
     private String titulo;
     
     @Column(name="ds_usuario")
-	@Lob
     private String descricao;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario", fetch = FetchType.LAZY)
